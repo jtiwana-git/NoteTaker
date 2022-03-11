@@ -40,21 +40,4 @@ if (err) {
 
 
 
-
-app.delete("/api/notes/:id", function(req, res){
-    let id = req.params.id.toString();
-    console.log(id);
-
-    for (i=0; i < delNote.length; i++){
-       
-        if (delNote[i].id == id){
-            res.send(delNote[i]);
-
-            delNote.splice(i,1);
-        }
-    }
-})
-
-
-
 module.exports = router
