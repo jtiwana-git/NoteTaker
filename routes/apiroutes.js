@@ -1,8 +1,7 @@
 const express = require('express')
-const router = express.Router()
 const fs = require('fs')
+const router = express.Router()
 const uniqid = require ('uniqid')
-const delNote = require('../db/db.json')
 
 router.get('/api/notes', (req, res) => {
  fs.readFile('db/db.json', "utf-8", (err, data) =>{
@@ -37,7 +36,5 @@ if (err) {
 }
 })   
 })
-
-
 
 module.exports = router
