@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const fs = require('fs')
 const uniqid = require ('uniqid')
+const delNote = require('../db/db.json')
 
 router.get('/api/notes', (req, res) => {
  fs.readFile('db/db.json', "utf-8", (err, data) =>{
@@ -34,10 +35,26 @@ if (err) {
     })
     
 }
-
+})   
 })
-    
 
+
+
+
+app.delete("/api/notes/:id", function(req, res){
+    let id = req.params.id.toString();
+    console.log(id);
+
+    for (i=0; i < delNote.length; i++){
+       
+        if (delNote[i].id == id){
+            res.send(delNote[i]);
+
+            delNote.splice(i,1);
+        }
+    }
 })
+
+
 
 module.exports = router
