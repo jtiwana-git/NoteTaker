@@ -27,6 +27,9 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 Click on the following link to access the website
 
+https://shielded-waters-00939.herokuapp.com/
+
+
 ## USAGE OF PROGRAM
 
 Electronically note taker/pad

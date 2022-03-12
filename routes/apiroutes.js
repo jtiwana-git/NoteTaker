@@ -37,28 +37,4 @@ if (err) {
 })   
 })
 
-router.delete('/api/notes', ( req, res) => {
-    fs.readFile('db/db.json', "utf-8", (err, data) =>{
-if (err) {
-    console.log(err)
-} else {
-    const db = JSON.parse(data)
-    const delNote = req.params
-    const id = "id"
-    const noteId = uniqid()
-    newNote[id] = noteId
-    db.slice(newNote)
-
-    fs.writeFile('db/db.json', JSON.stringify(db), (err) =>{
-        if(err) {
-            console.log(err)
-        } else {
-            return res.json(db)
-        }
-    })
-    
-}
-})   
-})
-
 module.exports = router
